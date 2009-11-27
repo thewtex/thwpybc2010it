@@ -9,10 +9,13 @@
 
 # Matt McCormick <matt@mmmccormick.com>  created 26 November 2009
 
-required_deps = [ ['IPython', '0.9' ],
-        [ 'numpy', '1.2' ],
+required_deps = [ 
+        [ 'basemap', '0.98' ], 
+        ['IPython', '0.9' ],
         [ 'matplotlib', '0.98' ],
-        [ 'basemap', '0.98' ] ]
+        [ 'numpy', '1.2' ],
+        [ 'scipy', '0.7.1' ],
+        ]
 
 optional_deps = [ ['enthought.mayavi'] ]
 
