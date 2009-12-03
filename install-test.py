@@ -92,12 +92,12 @@ indent = '    '
 print '\n\nSummary:'
 
 print '\nRequired Dependencies:'
-print indent, "Successful:", required_success
-print indent, "Errors:", required_error
+print indent, "Success:", required_success
+print indent, "Errors: ", required_error
 if( len( required_error ) > 0 ):
     print '\n', indent, 'Please see one of the instructors to help resolve all errors in \
 the required dependencies'
 
 print '\nOptional Dependencies:'
-print indent, "Successful:", optional_success
-print indent, "Errors:", optional_error
+print indent, "Success:", optional_success
+print indent, "Errors: ", optional_error
