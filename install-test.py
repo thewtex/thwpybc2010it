@@ -10,14 +10,17 @@
 # Matt McCormick <matt@mmmccormick.com>  created 26 November 2009
 
 required_deps = [ 
-        [ 'basemap', '0.98' ], 
-        ['IPython', '0.9' ],
+        [ 'IPython', '0.9' ],
         [ 'matplotlib', '0.98' ],
         [ 'numpy', '1.2' ],
+        [ 'rpy2', '2.0.6' ],
         [ 'scipy', '0.7.1' ],
         ]
 
-optional_deps = [ ['enthought.mayavi'] ]
+optional_deps = [ 
+        [ 'basemap', '0.98' ], 
+        [ 'enthought.mayavi' ] 
+        ]
 
 def test_deps( deps ):
     """Test whether the given dependencies can be imported.
@@ -41,7 +44,7 @@ def test_deps( deps ):
         try:
             mod = __import__( mod_name )
         except ImportError:
-            print "Error: Could not import", mod_name
+            print "Error:    Could not import", mod_name
             error.append( mod_name )
             continue
 
@@ -52,7 +55,7 @@ def test_deps( deps ):
                 if int( mod_version[i] ) < int( requested_mod_version[i] ):
                     raise ImportError
         except ImportError:
-            print "Error: Module", mod_name, "needs version",
+            print "Error:    Module", mod_name, "needs version",
             requested_mod_version, "but version", mod_version, "found"
             error.append( mod_name )
             continue
@@ -66,7 +69,7 @@ def test_deps( deps ):
     return ( success, error )
 
 
-print 'Testing installation for THW Python Bootcamp dependencies...'
+print 'Testing installation for THW Python Bootcamp dependencies...\n'
 
 required_success, required_error = test_deps( required_deps )
 
