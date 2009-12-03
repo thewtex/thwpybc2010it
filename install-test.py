@@ -9,6 +9,21 @@
 
 # Matt McCormick <matt@mmmccormick.com>  created 26 November 2009
 
+import sys
+
+
+if( sys.version_info[0] >= 3 ):
+    print 'Error: Python 2.X is suggested for THW Python 2010 Bootcamp. Python 3.X found.'
+    sys.exit(1)
+print 'Checking Python version...'
+if( sys.version_info[0] < 2 or sys.version_info[1] < 5 ):
+    print 'Error: Python 2.5 or greater required, Python', sys.version, ' found.'
+    sys.exit(1)
+print 'Success.\n'
+
+
+
+print 'Checking for modules...'
 required_deps = [ 
         [ 'IPython', '0.9' ],
         [ 'matplotlib', '0.98' ],
@@ -68,8 +83,6 @@ def test_deps( deps ):
 
     return ( success, error )
 
-
-print 'Testing installation for THW Python Bootcamp dependencies...\n'
 
 required_success, required_error = test_deps( required_deps )
 
