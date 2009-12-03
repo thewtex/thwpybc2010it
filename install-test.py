@@ -34,7 +34,7 @@ required_deps = [
 
 optional_deps = [ 
         [ 'basemap', '0.98' ], 
-        [ 'enthought.mayavi' ] 
+        [ 'enthought.mayavi', '3.2.0' ] 
         ]
 
 def test_deps( deps ):
