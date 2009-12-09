@@ -25,11 +25,11 @@ print 'Success.\n'
 
 print 'Checking for modules...'
 required_deps = [ 
-        [ 'IPython', '0.9' ],
+        [ 'IPython', '0.8.4' ],
         [ 'matplotlib', '0.98' ],
-        [ 'numpy', '1.2' ],
+        [ 'numpy', '1.1.0' ],
         [ 'rpy2', '2.0.6' ],
-        [ 'scipy', '0.7.1' ],
+        [ 'scipy', '0.6.0' ],
         ]
 
 optional_deps = [ 
@@ -70,8 +70,7 @@ def test_deps( deps ):
                 if int( mod_version[i] ) < int( requested_mod_version[i] ):
                     raise ImportError
         except ImportError:
-            print "Error:    Module", mod_name, "needs version",
-            requested_mod_version, "but version", mod_version, "found"
+            print "Error:    Module", mod_name, "needs version", requested_mod_version, "but version", mod_version, "found"
             error.append( mod_name )
             continue
         except AttributeError:
