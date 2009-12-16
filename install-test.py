@@ -33,7 +33,7 @@ required_deps = [
         ]
 
 optional_deps = [ 
-        [ 'basemap', '0.98' ], 
+        [ 'mpl_toolkits.basemap', '0.98' ], 
         [ 'enthought.mayavi', '3.2.0' ] 
         ]
 
