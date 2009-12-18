@@ -28,7 +28,7 @@ required_deps = [
         [ 'IPython', '0.8' ],
         [ 'matplotlib', '0.98' ],
         [ 'numpy', '1.1.0' ],
-        [ 'rpy2', '2.0.6' ],
+        [ 'rpy2', '2.0.4' ],
         [ 'scipy', '0.6.0' ],
         ]
 
