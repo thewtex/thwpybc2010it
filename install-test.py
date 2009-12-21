@@ -59,7 +59,7 @@ def test_deps( deps ):
         try:
             mod = __import__( mod_name )
         except ImportError:
-            print "Error:    Could not import", mod_name
+            print "Note:     Could not import", mod_name
             error.append( mod_name )
             continue
 
@@ -70,7 +70,7 @@ def test_deps( deps ):
                 if int( mod_version[i] ) < int( requested_mod_version[i] ):
                     raise ImportError
         except ImportError:
-            print "Error:    Module", mod_name, "needs version", requested_mod_version, "but version", mod_version, "found"
+            print "Note:     Module", mod_name, "needs version", requested_mod_version, "but version", mod_version, "found"
             error.append( mod_name )
             continue
         except AttributeError:
@@ -91,12 +91,12 @@ indent = '    '
 print '\n\nSummary:'
 
 print '\nRequired Dependencies:'
-print indent, "Success:", required_success
-print indent, "Errors: ", required_error
+print indent, "Adequate version found:     ", required_success
+print indent, "Adequate version not found: ", required_error
 if( len( required_error ) > 0 ):
     print '\n', indent, 'Please see one of the instructors to help resolve all errors in \
 the required dependencies'
 
 print '\nOptional Dependencies:'
-print indent, "Success:", optional_success
-print indent, "Errors: ", optional_error
+print indent, "Adequate version found:     ", optional_success
+print indent, "Adequate version not found: ", optional_error
