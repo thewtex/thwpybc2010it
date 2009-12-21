@@ -87,6 +87,16 @@ required_success, required_error = test_deps( required_deps )
 
 optional_success, optional_error = test_deps( optional_deps )
 
+print "\nChecking for Python IDLE IDE..."
+idle_found = False
+try:
+    import idlelib
+    print "IDLE found."
+    idle_found = True
+except ImportError:
+    print "IDLE not found."
+
+
 indent = '    '
 print '\n\nSummary:'
 
@@ -100,3 +110,14 @@ the required dependencies'
 print '\nOptional Dependencies:'
 print indent, "Adequate version found:     ", optional_success
 print indent, "Adequate version not found: ", optional_error
+
+print '\nText Editor:'
+if idle_found:
+    print indent, "IDLE IDE was found."
+else:
+    print indent, "IDLE IDE was not found."
+print """A programmer's text editor is needed.  If you do not have a preferred editor,
+the IDLE Python IDE comes with all python distributions and has a sufficient
+text editor.
+
+"""
