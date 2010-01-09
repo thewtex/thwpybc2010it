@@ -84,7 +84,7 @@ print "\nChecking for Python IDLE IDE..."
 idle_found = False
 try:
     import idlelib
-    print "IDLE found."
+    print "Success."
     idle_found = True
 except ImportError:
     print "IDLE not found."
