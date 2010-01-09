@@ -54,7 +54,7 @@ def test_deps( deps ):
         try:
             mod = __import__( mod_name )
         except ImportError:
-            print "Note:     Could not import", mod_name
+            print "FAILURE:     Could not import", mod_name
             error.append( mod_name )
             continue
 
@@ -65,7 +65,7 @@ def test_deps( deps ):
                 if int( mod_version[i] ) < int( requested_mod_version[i] ):
                     raise ImportError
         except ImportError:
-            print "Note:     Module", mod_name, "needs version", requested_mod_version, "but version", mod_version, "found"
+            print "FAILURE:     Module", mod_name, "needs version", requested_mod_version, "but version", mod_version, "found"
             error.append( mod_name )
             continue
         except AttributeError:
