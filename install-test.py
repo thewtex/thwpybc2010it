@@ -32,11 +32,6 @@ required_deps = [
         [ 'scipy', '0.6.0' ],
         ]
 
-optional_deps = [ 
-        [ 'mpl_toolkits.basemap', '0.98' ], 
-        [ 'enthought.mayavi', '3.2.0' ] 
-        ]
-
 def test_deps( deps ):
     """Test whether the given dependencies can be imported.
 
@@ -85,8 +80,6 @@ def test_deps( deps ):
 
 required_success, required_error = test_deps( required_deps )
 
-optional_success, optional_error = test_deps( optional_deps )
-
 print "\nChecking for Python IDLE IDE..."
 idle_found = False
 try:
@@ -106,10 +99,6 @@ print indent, "Adequate version not found: ", required_error
 if( len( required_error ) > 0 ):
     print '\n', indent, 'Please see one of the instructors to help resolve all errors in \
 the required dependencies'
-
-print '\nOptional Dependencies:'
-print indent, "Adequate version found:     ", optional_success
-print indent, "Adequate version not found: ", optional_error
 
 print '\nText Editor:'
 if idle_found:
